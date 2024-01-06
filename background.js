@@ -1,6 +1,6 @@
-chrome.runtime.onInstalled.addListener(() => {
-  chrome.alarms.create("vsb-email-notifier", { periodInMinutes: 1 });
-  chrome.alarms.onAlarm.addListener(() =>
+chrome.runtime.onStartup.addListener(() => {
+  chrome.alarms.create("vsb-email-notifier-alarm", { periodInMinutes: 1 });
+  chrome.alarms.onAlarm.addListener(() => {
     chrome.tabs.query(
       { url: "https://posta.vsb.cz/roundcube/?_task=mail&_mbox=INBOX" },
       (tabs) => {
@@ -14,6 +14,6 @@ chrome.runtime.onInstalled.addListener(() => {
           type: "basic",
         });
       }
-    )
-  );
+    );
+  });
 });
