@@ -1,11 +1,11 @@
 {
   "author": "Maros Meciar",
   "name": "VSB E-mail Notifier",
-  "description": "Notifies you about new e-mails in your VSB mailbox.",
+  "description": "Notifies when a new message arrives",
   "version": "1.0",
-  "manifest_version": 3,
+  "manifest_version": 2,
   "background": {
-    "service_worker": "background.js"
+    "scripts": ["background.js"]
   },
   "permissions": ["tabs", "alarms", "notifications"],
   "icons": {
