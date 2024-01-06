@@ -1,8 +1,8 @@
 const runExtension = () => {
-  console.log("VSB E-mail Notifier is running!", new Date());
+  console.log("VSB E-mail Notifier is running!", new Date().toLocaleString());
   chrome.alarms.create("vsb-email-notifier-alarm", { periodInMinutes: 1 });
   chrome.alarms.onAlarm.addListener(() => {
-    console.log("Checking for unread messages...", new Date());
+    console.log("Checking for unread messages...", new Date().toLocaleString());
     chrome.tabs.query(
       { url: "https://posta.vsb.cz/roundcube/?_task=mail&_mbox=INBOX" },
       (tabs) => {
